@@ -54,7 +54,9 @@ const FoodOption = ({
               </Reviews>
             </InfosProduto>
             <p>{description}</p>
-            <Button title="Saiba mais">Saiba mais</Button>
+            <Button to="/perfil" title="Saiba mais">
+              Saiba mais
+            </Button>
           </div>
         </Container>
       ) : (
@@ -63,7 +65,9 @@ const FoodOption = ({
           <div>
             <InfosProduto>{name}</InfosProduto>
             <p>{description}</p>
-            <Button title="Saiba mais">Saiba mais</Button>
+            <Button to="/" title="Saiba mais">
+              Saiba mais
+            </Button>
           </div>
         </Container>
       )}

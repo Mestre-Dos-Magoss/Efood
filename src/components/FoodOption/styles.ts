@@ -29,7 +29,8 @@ export const Container = styled.div<Props>`
   ${Botao} {
     background-color: ${(props) => (props.type === 'food' ? colors.begie : '')};
     color: ${(props) => (props.type === 'food' ? colors.red : '')};
-    width: ${(props) => (props.type === 'food' ? '100%' : '')};
+    width: ${(props) => (props.type === 'food' ? '100%' : '18%')};
+    text-align: center;
   }
 `
 export const ImgProduto = styled.img`

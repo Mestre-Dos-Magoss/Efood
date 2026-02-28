@@ -102,32 +102,37 @@ export type Props = {
 const Cardapio = ({ view }: Props) => (
   <Container>
     <div className="container">
-      <List view={view}>
-        {Restaurantes.map((r) => (
-          <li>
-            <FoodOption
-              key={r.restaurante}
-              name={r.restaurante}
-              description={r.description}
-              image={r.image}
-              review={r.review}
-              tags={r.tags}
-              type={'food'}
-            />
-          </li>
-        ))}
-        {Foods.map((r) => (
-          <li>
-            <FoodOption
-              key={r.name}
-              name={r.name}
-              description={r.description}
-              image={r.image}
-              type={'food'}
-            />
-          </li>
-        ))}
-      </List>
+      {view === 'restaurant' ? (
+        <List view={view}>
+          {Restaurantes.map((r) => (
+            <li>
+              <FoodOption
+                key={r.restaurante}
+                name={r.restaurante}
+                description={r.description}
+                image={r.image}
+                review={r.review}
+                tags={r.tags}
+                type={view}
+              />
+            </li>
+          ))}
+        </List>
+      ) : (
+        <List view="food">
+          {Foods.map((r) => (
+            <li>
+              <FoodOption
+                key={r.name}
+                name={r.name}
+                description={r.description}
+                image={r.image}
+                type={'food'}
+              />
+            </li>
+          ))}
+        </List>
+      )}
     </div>
   </Container>
 )

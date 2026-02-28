@@ -3,12 +3,12 @@ import { Botao } from './styles'
 type Props = {
   children: string
   title: string
-  // to?: string
+  to: string
   action?: () => void
 }
 
-const Button = ({ title, children, action }: Props) => (
-  <Botao title={title} onClick={action}>
+const Button = ({ title, children, to, action }: Props) => (
+  <Botao title={title} to={to} onClick={action}>
     {children}
   </Botao>
 )

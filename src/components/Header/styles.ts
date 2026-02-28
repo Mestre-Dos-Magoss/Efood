@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 import { Props } from '.'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div<Props>`
   display: block;
@@ -26,7 +27,7 @@ export const Text = styled.div`
   max-width: 540px;
   width: 100%;
   height: 84px;
-  margin-bottom: 40px;
+  margin-top: 136px;
 
   h2 {
     text-align: center;
@@ -38,9 +39,8 @@ export const Text = styled.div`
 export const Logo = styled.h1`
   display: flex;
   justify-content: center;
-  margin-bottom: 136px;
 `
-export const Link = styled.a`
+export const Linke = styled(Link)`
   font-size: 18px;
   font-weight: bold;
   color: ${colors.red};
