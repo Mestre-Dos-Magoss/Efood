@@ -13,19 +13,7 @@ import {
 } from './styles'
 import Tag from '../Tag'
 import Button from '../Button'
-
-type Props = {
-  type: 'restaurant' | 'food'
-  name: string
-  image: string
-  tags?: string
-  review?: number
-  description: string
-  id?: number | string
-  porcao?: string
-  price?: number
-  highlighted?: boolean
-}
+import { Cards } from '../../types/Cards'
 
 const FoodOption = ({
   name,
@@ -38,7 +26,7 @@ const FoodOption = ({
   porcao,
   price,
   highlighted
-}: Props) => {
+}: Cards) => {
   function getDescriptionMenu(descricao: string): string {
     return descricao.slice(0, 144) + '...'
   }
