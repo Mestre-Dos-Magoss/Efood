@@ -20,7 +20,6 @@ export const Container = styled.div<Props>`
     margin-bottom: ${(props) => (props.type === 'restaurant' ? '16px' : '8px')};
     font-size: 14px;
     line-height: 22px;
-    /* text-align:; */
   }
 
   > div {

@@ -5,7 +5,7 @@ export type Cards = {
   tags?: string
   review?: number
   description: string
-  id?: number | string
+  id?: number
   porcao?: string
   price?: number
   highlighted?: boolean

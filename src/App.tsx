@@ -1,8 +1,12 @@
-import Header from './components/Header'
-import GlobalStyle from './styles'
-import Footer from './components/Footer'
-import Rotas from './routes'
 import { BrowserRouter, Routes, useLocation, useMatch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './store'
+
+import Rotas from './routes'
+
+import GlobalStyle from './styles'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   const HeaderCostumizado = () => {
@@ -15,12 +19,14 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <GlobalStyle />
-      <HeaderCostumizado />
-      <Routes>{Rotas()}</Routes>
-      <Footer />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <GlobalStyle />
+        <HeaderCostumizado />
+        <Routes>{Rotas()}</Routes>
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   )
 }
 

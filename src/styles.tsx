@@ -1,5 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const colors = {
+  red: '#E66767',
+  begie: '#FFEBD9',
+  white: '#FFF',
+  begi: '#fff5ed'
+}
+
 const GlobalStyle = createGlobalStyle`
   *{
     padding: 0;
@@ -16,13 +23,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
-`
 
-export const colors = {
-  red: '#E66767',
-  begie: '#FFEBD9',
-  white: '#FFF',
-  begi: '#fff5ed'
-}
+`
 
 export default GlobalStyle

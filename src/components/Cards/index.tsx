@@ -1,7 +1,11 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { add } from '../../store/reducers/cart'
+import { FormatPrice } from '../../utils/formatPrices'
+
 import star from '../../assets/star.png'
 import close from '../../assets/close 1.png'
-
 import {
   Container,
   ContainerModal,
@@ -27,6 +31,24 @@ const FoodOption = ({
   price,
   highlighted
 }: Cards) => {
+  const dispatch = useDispatch()
+
+  function addItem() {
+    if (name && description && image && id && porcao && price) {
+      dispatch(
+        add({
+          nome: name,
+          descricao: description,
+          foto: image,
+          id: id,
+          porcao: porcao,
+          preco: price
+        })
+      )
+    }
+    return <p>Os dados não chegaram</p>
+  }
+
   function getDescriptionMenu(descricao: string): string {
     return descricao.slice(0, 144) + '...'
   }
@@ -37,15 +59,6 @@ const FoodOption = ({
 
   const msgDestaque = 'Destaque da semana'
 
-  function formataPrecos(valor = 0): number | string {
-    if (!valor || valor === 0) return ' Preço não informado.'
-    return new Intl.NumberFormat('pr-BR', {
-      style: 'currency',
-      currency: 'BRL',
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2
-    }).format(valor)
-  }
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   return (
@@ -100,8 +113,12 @@ const FoodOption = ({
                   <br />
                   Serve: {porcao}
                 </p>
-                <Button title="Adicione este prato ao seu carrinho" to={'#'}>
-                  <>Adicionar ao carrinho - {formataPrecos(price)}</>
+                <Button
+                  title="Adicione este prato ao seu carrinho"
+                  action={addItem}
+                  to={'#'}
+                >
+                  <>Adicionar ao carrinho - {FormatPrice(price!)}</>
                 </Button>
               </div>
             </Modal>

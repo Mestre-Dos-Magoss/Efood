@@ -1,12 +1,4 @@
-type MenuItens = {
-  foto: string
-  preco: number
-  id: string
-  nome: string
-  descricao: string
-  porcao: string
-}
-
+import { MenuItens } from './menuItens'
 export type Restaurants = {
   id: number
   titulo: string
