@@ -24,7 +24,7 @@ const Header = ({ type = 'home' }: Props) => {
 
     window.addEventListener('scroll', scrollMonitor) // ativando a verificação
 
-    return () => removeEventListener('scroll', scrollMonitor)
+    return () => window.removeEventListener('scroll', scrollMonitor)
   }, [])
 
   const openModal = () => {
