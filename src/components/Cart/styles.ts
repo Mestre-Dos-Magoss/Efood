@@ -1,42 +1,10 @@
 import styled from 'styled-components'
 
 import { colors } from '../../styles'
-import { Botao } from '../Button/styles'
 
 import lixeira from '../../assets/lixeira.png'
 
 export const CartContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  justify-content: flex-end;
-  z-index: 1;
-
-  &.open {
-    display: flex;
-  }
-`
-
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-`
-
-export const Sidebar = styled.aside`
-  display: block;
-  max-width: 360px;
-  width: 100%;
-  padding: 32px 8px 0 8px;
-  background-color: ${colors.red};
-  z-index: 1;
-
   p {
     display: flex;
     justify-content: space-between;
@@ -44,15 +12,15 @@ export const Sidebar = styled.aside`
     margin-bottom: 16px;
     font-weight: bold;
     font-size: 14px;
-    color: ${colors.white};
   }
+`
 
-  ${Botao} {
-    width: 100%;
-    background-color: ${colors.begie};
-    color: ${colors.red};
-    text-align: center;
-  }
+export const EmptyItem = styled.p`
+  margin-top: 260px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 `
 
 export const FoodItem = styled.li`

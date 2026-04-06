@@ -1,4 +1,4 @@
-import { Container, List } from './styles'
+import * as S from './styles'
 
 export type Props = {
   view: 'restaurant' | 'food'
@@ -7,17 +7,17 @@ export type Props = {
 
 const CardList = ({ view, children }: Props) => {
   return (
-    <Container view={view}>
+    <S.Container view={view}>
       <div className="container">
         {view === 'restaurant' ? (
-          <List view={view}>{children}</List>
+          <S.List view={view}>{children}</S.List>
         ) : (
           <>
-            <List view={view}>{children}</List>
+            <S.List view={view}>{children}</S.List>
           </>
         )}
       </div>
-    </Container>
+    </S.Container>
   )
 }
 export default CardList

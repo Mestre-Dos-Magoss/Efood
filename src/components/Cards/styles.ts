@@ -105,6 +105,7 @@ export const Modal = styled.div`
     display: block;
     width: 16px;
     height: 16px;
+    cursor: pointer;
   }
 
   div {

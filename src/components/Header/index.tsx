@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { Link } from 'react-router-dom'
 
-import { open } from '../../store/reducers/cart'
-
 import logo from '../../assets/logo.svg'
-import { Container, LinkCart, Linke, Logo, NavContainer, Text } from './styles'
+import * as S from './styles'
+
+import { open } from '../../store/reducers/cart'
 
 export type Props = {
   type: 'home' | 'perfil'
@@ -31,38 +31,37 @@ const Header = ({ type = 'home' }: Props) => {
     dispatch(open())
   }
 
-  console.log(visible)
   return (
     <>
       {type === 'home' ? (
-        <Container type={type} position={visible}>
+        <S.Container type={type} position={visible}>
           <div className="container">
             <Link to="/">
-              <Logo>
+              <S.Logo>
                 <img src={logo} alt="logo" />
-              </Logo>
+              </S.Logo>
             </Link>
-            <Text>
+            <S.Text>
               <h2>Viva experiências gastronômicas no conforto da sua casa</h2>
-            </Text>
+            </S.Text>
           </div>
-        </Container>
+        </S.Container>
       ) : (
-        <Container position={visible} type={type}>
+        <S.Container position={visible} type={type}>
           <div className="container">
-            <NavContainer>
-              <Linke to="/">Restaurantes</Linke>
+            <S.NavContainer>
+              <S.Linke to="/">Restaurantes</S.Linke>
               <Link to="/">
-                <Logo>
+                <S.Logo>
                   <img src={logo} alt="logo" />
-                </Logo>
+                </S.Logo>
               </Link>
-              <LinkCart onClick={openModal}>
+              <S.LinkCart onClick={openModal}>
                 {itens.length} produto{itens.length > 1 && 's'} no carrinho
-              </LinkCart>
-            </NavContainer>
+              </S.LinkCart>
+            </S.NavContainer>
           </div>
-        </Container>
+        </S.Container>
       )}
     </>
   )

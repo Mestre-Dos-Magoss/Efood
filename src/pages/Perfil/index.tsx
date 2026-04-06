@@ -4,7 +4,8 @@ import { useGetRestaurantAndFoodsQuery } from '../../services/api'
 import Banner from '../../components/Banner'
 import CardList from '../../components/Card_List'
 import Cards from '../../components/Cards'
-import Cart from '../../components/Cart'
+import Aside from '../../components/Aside'
+import Loader from '../../components/Loader'
 
 const Perfil = () => {
   const { id } = useParams()
@@ -13,7 +14,7 @@ const Perfil = () => {
   if (menu) {
     return (
       <>
-        <Cart />
+        <Aside />
         <Banner />
         <CardList view="food">
           {menu.cardapio.map((dado) => (
@@ -34,7 +35,7 @@ const Perfil = () => {
     )
   }
 
-  return <h4>Carregando</h4>
+  return <Loader />
 }
 
 export default Perfil

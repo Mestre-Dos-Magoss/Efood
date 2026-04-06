@@ -3,30 +3,30 @@ import facebook from '../../assets/facebook.svg'
 import instagram from '../../assets/instagram.svg'
 import x from '../../assets/x.svg'
 
-import { FooterContainer, Rede, RedesSociais, TextFooter } from './styles'
+import * as S from './styles'
 
 const message =
   'A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.'
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <S.FooterContainer>
       <div className="container">
         <img src={logo} alt="Efood" />
-        <RedesSociais>
-          <Rede>
+        <S.RedesSociais>
+          <S.Rede>
             <img src={instagram} alt="" />
-          </Rede>
-          <Rede>
+          </S.Rede>
+          <S.Rede>
             <img src={facebook} alt="" />
-          </Rede>
-          <Rede>
+          </S.Rede>
+          <S.Rede>
             <img src={x} alt="" />
-          </Rede>
-        </RedesSociais>
-        <TextFooter>{message}</TextFooter>
+          </S.Rede>
+        </S.RedesSociais>
+        <S.TextFooter>{message}</S.TextFooter>
       </div>
-    </FooterContainer>
+    </S.FooterContainer>
   )
 }
 export default Footer

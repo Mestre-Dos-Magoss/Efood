@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, useLocation, useMatch } from 'react-router-dom'
+import { BrowserRouter, useLocation, useMatch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './store'
 
@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
         <GlobalStyle />
         <HeaderCostumizado />
-        <Routes>{Rotas()}</Routes>
+        <Rotas />
         <Footer />
       </BrowserRouter>
     </Provider>

@@ -1,19 +1,23 @@
 import { useMatch } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+
 import { BannerStyle } from './styles'
-import { Restaurants } from '../../types/restaurant'
+
+import { useGetRestaurantAndFoodsQuery } from '../../services/api'
+import Loader from '../Loader'
 
 const Banner = () => {
   const id = useMatch('perfil/:id')?.params.id
   const [chosenRestaurant, setChosenRestaurant] = useState<Restaurants>()
+  const { data: menu } = useGetRestaurantAndFoodsQuery(id as string)
 
   useEffect(() => {
-    fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setChosenRestaurant(res))
+    setChosenRestaurant(menu)
   }, [id])
 
-  if (!chosenRestaurant) return <h4>Carregando...</h4>
+  if (!chosenRestaurant) {
+    return <Loader />
+  }
 
   return (
     <BannerStyle style={{ backgroundImage: `url(${chosenRestaurant.capa})` }}>
